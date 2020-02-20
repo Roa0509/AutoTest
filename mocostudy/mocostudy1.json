@@ -1,0 +1,45 @@
+﻿[
+  {
+    "description": "这是我们的第一个moco练习！",
+    "request": {
+      "uri": "/demo"
+    },
+    "response": {
+      "text": "这是第一个moco框架demo",
+      "headers":{
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "这是一个不带参数的Get请求",
+    "request": {
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "get请求成功。",
+      "headers":{
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description":"这是一个带参数的get请求",
+    "request":{
+      "uri": "/getdemo1",
+      "method": "get",
+      "queries":{
+        "name": "huhansan",
+        "age": "18"
+      }
+    },
+    "response":{
+      "text": "我胡汉三又回来了",
+      "headers":{
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  }
+
+]

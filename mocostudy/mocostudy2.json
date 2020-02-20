@@ -1,0 +1,120 @@
+[
+  {
+    "description": "这是我的带个POST请求demo",
+    "request": {
+      "uri": "/postdemo",
+      "method": "post",
+      "forms": {
+        "name": "huhansan",
+        "sex": "man"
+      }
+    },
+    "response": {
+      "text": "这是一个带参数的POST请求",
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "这是一个登录接口，返回cookie信息",
+    "request": {
+      "uri": "/login/getcookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "uuid": "1",
+        "login": "true"
+      },
+      "json": {
+        "code": "1",
+        "msg": "恭喜你登录成功"
+      },
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "这是一个带cookies信息的事务操作。",
+    "request": {
+      "uri": "/check/sendcookies",
+      "method": "get",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "cookies": {
+        "uuid": "1",
+        "login": "true"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json":{
+        "code": "1",
+        "msg": "获取成功。"
+      },
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+
+  },
+  {
+    "description": "这是一个带cookie信息且请求参数为json格式的POST请求",
+    "request": {
+      "uri": "/postdemo1",
+      "method": "post",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "cookies":{
+        "login": "true"
+      },
+      "json": {
+        "username": "huhansan",
+        "password": "123456"
+      }
+    },
+    "response":{
+      "status": 200,
+      "json":{
+        "code": "1",
+        "msg": "恭喜你胡汉三，你又回来了！"
+      },
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "这是一个重定向的请求",
+    "request":{
+      "uri": "/redirect"
+    },
+    "redirectTo": "http://www.baidu.com"
+  },
+  {
+    "description": "这还是一个重定向请求",
+    "request": {
+      "uri": "/redirect/old"
+    },
+    "redirectTo": "/redirect/new"
+  },
+  {
+    "description": "这是一个重定向到的的请求",
+    "request": {
+      "uri": "/redirect/new"
+    },
+    "response": {
+      "text": "看到这条消息就说明重定向成功了",
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+
+  }
+
+
+]
